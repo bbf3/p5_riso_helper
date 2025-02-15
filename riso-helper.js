@@ -26,6 +26,29 @@ let angle = 45; //for halftone angle
 let intensity = 127; //for halftone intensity
 let sync = false; //halftone layer sync
 
+howto = `
+Controls:
+r = color separate based on selected colors
+e = export color channels 
+h = process halftone 
+~ = reset all settings
+
+x = cross halftone shape 
+c = circle halftone shape 
+o = ellipse halftone shape 
+s = square halftone shape 
+l - line halftone shape 
+
+u = sync/unsync halftone layers 
+, and . = darken or lighten color channels 
+[ and ] = change halftone frequency (dot size)
+- and = = change halftone angle 
+( and ) = change halftone intensity
+
+you must re-output the halftone or color separation after each adjustment.
+`
+
+
 //---------------------------------------------
 function preload() {
     img = loadImage("photos/IMG_3829.jpeg");
@@ -42,6 +65,7 @@ function setup() {
         layers[i] = new Riso(colors[i]);
     }
 
+    console.log(howto);
 }
 
 
@@ -92,6 +116,7 @@ function processHalftone() {
 //-----------------------------------------------------------------------------------
 //---------KEY PRESS MAPPINGS--------------------------------------------------------
 //-----------------------------------------------------------------------------------
+
 
 
 function keyPressed() {
